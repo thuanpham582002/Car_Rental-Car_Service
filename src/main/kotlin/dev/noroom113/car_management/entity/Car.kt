@@ -16,8 +16,4 @@ data class Car(
     val color: String,
     val created_at: Date,
     val updated_at: Date,
-    @OneToOne
-    val carDetail: CarDetail,
-){
-    constructor(name: String, model: String, arrivalYear: Int, color: String, price: Double) : this(0, name, model, arrivalYear, color, price)
-}
+)
