@@ -16,4 +16,27 @@ data class CarParameters(
     val transmissionType: Int,
     val isAirConditioningAvailable: Boolean,
 ) {
+    constructor() : this(
+        id = 0,
+        numberOfDoors = 0,
+        numberOfSeats = 0,
+        fuelType = 0,
+        transmissionType = 0,
+        isAirConditioningAvailable = false,
+    )
+
+    constructor(
+        numberOfDoors: Int,
+        numberOfSeats: Int,
+        fuelType: Int,
+        transmissionType: Int,
+        isAirConditioningAvailable: Boolean,
+    ) : this(
+        id = 0,
+        numberOfDoors = numberOfDoors,
+        numberOfSeats = numberOfSeats,
+        fuelType = fuelType,
+        transmissionType = transmissionType,
+        isAirConditioningAvailable = isAirConditioningAvailable,
+    )
 }

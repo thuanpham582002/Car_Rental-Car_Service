@@ -27,6 +27,4 @@ class CarController(
     fun getCarById(id: Long) : ResponseEntity<Car> {
         return ResponseEntity.ok(carService.getCarById(id))
     }
-
-
 }
