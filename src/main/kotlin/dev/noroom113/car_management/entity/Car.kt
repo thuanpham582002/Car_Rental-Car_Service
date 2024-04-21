@@ -29,7 +29,7 @@ data class Car(
     val carPackage: CarPackage?,
     @OneToOne
     @JoinColumn(name = "carParameters_id")
-    @Cascade(CascadeType.ALL)
+    @Cascade(CascadeType.MERGE)
     val carParameters: CarParameters?,
     val created_at: Date,
     val updated_at: Date,
