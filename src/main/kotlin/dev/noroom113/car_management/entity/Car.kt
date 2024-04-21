@@ -1,10 +1,21 @@
 package dev.noroom113.car_management.entity
 
-import jakarta.persistence.*
+
+
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.ManyToOne
+import jakarta.persistence.OneToOne
+import jakarta.persistence.Table
+import org.hibernate.annotations.Cascade
+import org.hibernate.annotations.CascadeType
 import java.sql.Date
 
 @Entity
-@Table(name = "cars")
+@Table
 data class Car(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,6 +28,8 @@ data class Car(
     @ManyToOne
     val carPackage: CarPackage?,
     @OneToOne
+    @JoinColumn(name = "carParameters_id")
+    @Cascade(CascadeType.ALL)
     val carParameters: CarParameters?,
     val created_at: Date,
     val updated_at: Date,
