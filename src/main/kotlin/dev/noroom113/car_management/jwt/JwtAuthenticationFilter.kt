@@ -19,8 +19,6 @@ class JwtAuthenticationFilter(
 ) : OncePerRequestFilter() {
     companion object{
         val WHITE_LIST = setOf<UrlAccessable>(
-            UrlAccessable(HttpMethod.ALL,"/api/v1/accessibility/all"),
-            UrlAccessable(HttpMethod.ALL,"/api/v1/accessibility/get"),
         )
     }
     override fun doFilterInternal(
