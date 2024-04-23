@@ -4,6 +4,7 @@ import dev.noroom113.car_management.entity.Car
 import dev.noroom113.car_management.service.CarService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -17,7 +18,7 @@ class CarController(
         return ResponseEntity.ok(carService.getAllCars())
     }
 
-    @GetMapping("/add")
+    @PostMapping("/add")
     fun addCar(car: Car) {
         carService.addCar(car)
     }
